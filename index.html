@@ -2,84 +2,232 @@
 <html lang="el">
 <head>
   <meta charset="utf-8">
-  <title>Έγγραφα ανά έτος</title>
+  <title>WMS Wealth Management Service Μ.Ι.Κ.Ε. | Έγγραφα</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Επίσημη σελίδα εγγράφων της WMS Wealth Management Service Μ.Ι.Κ.Ε.">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7f8;
-      color: #1f2933;
-      margin: 0;
-      padding: 40px 20px;
+    :root {
+      --primary: #12324a;
+      --primary-light: #1f4f72;
+      --accent: #b89b5e;
+      --background: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #e5e7eb;
     }
 
-    .container {
-      max-width: 760px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f4f6f8 0%, #eef2f5 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 920px;
       margin: 0 auto;
-      background: #ffffff;
-      padding: 32px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 48px 20px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #ffffff;
+      padding: 40px 36px;
+      border-radius: 18px 18px 0 0;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    .company-label {
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #d9c99b;
+      margin-bottom: 12px;
+      font-weight: bold;
     }
 
     h1 {
-      margin-top: 0;
+      margin: 0;
       font-size: 30px;
+      line-height: 1.25;
+      font-weight: 700;
     }
 
-    p {
-      color: #52616b;
+    .subtitle {
+      margin: 14px 0 0;
       font-size: 16px;
+      line-height: 1.6;
+      color: #dbe6ee;
+      max-width: 680px;
     }
 
-    .doc-list {
-      list-style: none;
+    .content {
+      background: var(--card);
+      padding: 34px 36px 38px;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 14px 36px rgba(18, 50, 74, 0.12);
+    }
+
+    .section-title {
+      margin: 0 0 22px;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .documents {
+      display: grid;
+      gap: 14px;
+      margin: 0;
       padding: 0;
-      margin-top: 28px;
+      list-style: none;
     }
 
-    .doc-list li {
-      margin-bottom: 14px;
-    }
-
-    .doc-list a {
-      display: block;
-      padding: 16px 18px;
-      background: #eefafa;
-      color: #0b6f6a;
+    .documents a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--primary);
       text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      border: 1px solid #c7f0ec;
+      background: #ffffff;
+      transition: all 0.2s ease;
     }
 
-    .doc-list a:hover {
-      background: #dff7f4;
+    .documents a:hover {
+      border-color: var(--accent);
+      background: #fbfaf6;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(18, 50, 74, 0.08);
+    }
+
+    .doc-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .doc-year {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .doc-type {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .open-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
     }
 
     .footer {
-      margin-top: 32px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
       font-size: 13px;
-      color: #7b8794;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 24px 14px;
+      }
+
+      .header,
+      .content {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .documents a {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .open-label {
+        margin-top: 4px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Έγγραφα ανά έτος</h1>
-    <p>Επιλέξτε το έτος που σας ενδιαφέρει για να ανοίξετε το αντίστοιχο αρχείο.</p>
+  <main class="page">
+    <header class="header">
+      <div class="company-label">WMS Wealth Management Service Μ.Ι.Κ.Ε.</div>
+      <h1>Εταιρικά Έγγραφα</h1>
+      <p class="subtitle">
+        Επίσημη σελίδα πρόσβασης στα διαθέσιμα έγγραφα της εταιρείας ανά έτος.
+      </p>
+    </header>
 
-    <ul class="doc-list">
-      <li><a href="~/documents/1.txt" target="_blank">Έγγραφο 2026</a></li>
-      <li><a href="documents/1.txt" target="_blank">Έγγραφο 2025</a></li>
-      <li><a href="1.txt" target="_blank">Έγγραφο 2024</a></li>
-         </ul>
+    <section class="content">
+      <h2 class="section-title">Διαθέσιμα αρχεία</h2>
 
-    <div class="footer">
-      © 2026 — Όλα τα δικαιώματα διατηρούνται.
-    </div>
-  </div>
+      <ul class="documents">
+        <li>
+          <a href="documents/2026.pdf" target="_blank" rel="noopener">
+            <span class="doc-info">
+              <span class="doc-year">Έγγραφο 2026</span>
+              <span class="doc-type">PDF αρχείο</span>
+            </span>
+            <span class="open-label">Άνοιγμα</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="documents/2025.pdf" target="_blank" rel="noopener">
+            <span class="doc-info">
+              <span class="doc-year">Έγγραφο 2025</span>
+              <span class="doc-type">PDF αρχείο</span>
+            </span>
+            <span class="open-label">Άνοιγμα</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="documents/2024.pdf" target="_blank" rel="noopener">
+            <span class="doc-info">
+              <span class="doc-year">Έγγραφο 2024</span>
+              <span class="doc-type">PDF αρχείο</span>
+            </span>
+            <span class="open-label">Άνοιγμα</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="documents/2023.pdf" target="_blank" rel="noopener">
+            <span class="doc-info">
+              <span class="doc-year">Έγγραφο 2023</span>
+              <span class="doc-type">PDF αρχείο</span>
+            </span>
+            <span class="open-label">Άνοιγμα</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        © 2026 WMS Wealth Management Service Μ.Ι.Κ.Ε. Όλα τα δικαιώματα διατηρούνται.
+      </div>
+    </section>
+  </main>
 </body>
 </html>
